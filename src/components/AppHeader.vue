@@ -17,13 +17,23 @@ export default {
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/" aria-current="page">Home</a>
+                            <!-- <a class="nav-link active" href="/" aria-current="page">Home</a> -->
+                            <router-link class="nav-link" active-class="active" :to="{ name: 'home' }">Home</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About me</a>
+                            <!-- <a class="nav-link active" href="/" aria-current="page">Home</a> -->
+                            <router-link class="nav-link" active-class="active"
+                                :to="{ name: 'projects' }">Projects</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contacts</a>
+                            <router-link class="nav-link" active-class="active" :to="{ name: 'about' }">About
+                                me</router-link>
+                            <!-- <a class="nav-link" href="#">About me</a> -->
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">Contacts</a> -->
+                            <router-link class="nav-link" active-class="active"
+                                :to="{ name: 'contacts' }">Contacts</router-link>
                         </li>
                     </ul>
                     <form class="d-flex my-2 my-lg-0">

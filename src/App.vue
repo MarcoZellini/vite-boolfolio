@@ -44,7 +44,7 @@ export default {
 <template>
   <AppHeader />
 
-  <main id="app_main">
+  <!-- <main id="app_main">
     <div id="jumbotron" class="p-5 mb-1 bg-light rounded-3">
       <div class="container py-5">
         <h1 class="display-5 fw-bold">Hi There!</h1>
@@ -70,8 +70,11 @@ export default {
 
       </div>
     </div>
-  </main>
+  </main> -->
   <!-- /#app_main -->
+
+  <router-view></router-view>
+
   <AppFooter />
 </template>
 
