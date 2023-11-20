@@ -25,6 +25,8 @@ export default {
                 <a :href="project.website_link" class="btn btn-primary">
                     Website link
                 </a>
+                <router-link class="btn btn-dark text-white"
+                    :to="{ name: 'single-project', params: { slug: project.slug } }">View Project</router-link>
                 <a :href="project.github_link" class="btn btn-dark text-white">
                     GitHub Link
                 </a>

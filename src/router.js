@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage.vue';
 import AboutPage from './pages/AboutPage.vue';
 import ProjectsPage from './pages/ProjectsPage.vue';
 import ContactsPage from './pages/ContactsPage.vue';
+import SingleProject from './pages/SingleProject.vue';
 
 const routes = [
     {
@@ -15,6 +16,11 @@ const routes = [
         path: '/projects',
         name: 'projects',
         component: ProjectsPage
+    },
+    {
+        path: '/projects/:slug',
+        name: 'single-project',
+        component: SingleProject
     },
     {
         path: '/about',
