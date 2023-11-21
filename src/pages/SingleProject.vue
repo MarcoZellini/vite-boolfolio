@@ -75,7 +75,6 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response.data);
                     if (response.data.success) {
                         this.querySuccessed = true
                         this.project = response.data.project;

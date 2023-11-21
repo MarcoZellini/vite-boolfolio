@@ -15,29 +15,24 @@ export default {
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse align-items-center justify-content-end" id="collapsibleNavId">
-                    <ul class="navbar-nav mt-2 mt-lg-0 text-center">
+                    <ul class="navbar-nav text-center">
                         <li class="nav-item">
-                            <!-- <a class="nav-link active" href="/" aria-current="page">Home</a> -->
                             <router-link class="nav-link" active-class="active" :to="{ name: 'home' }">
                                 Home
                             </router-link>
                         </li>
                         <li class="nav-item">
-                            <!-- <a class="nav-link active" href="/" aria-current="page">Home</a> -->
                             <router-link class="nav-link" active-class="active" :to="{ name: 'projects' }">
                                 Projects
                             </router-link>
                         </li>
                         <li class="nav-item">
                             <router-link class="nav-link" active-class="active" :to="{ name: 'about' }">
-                                About
-                                me</router-link>
-                            <!-- <a class="nav-link" href="#">About me</a> -->
+                                About me</router-link>
                         </li>
                         <li class="nav-item">
-                            <!-- <a class="nav-link" href="#">Contacts</a> -->
                             <router-link class="nav-link" active-class="active" :to="{ name: 'contacts' }">
-                                Contact
+                                Contact Me
                             </router-link>
                         </li>
                     </ul>

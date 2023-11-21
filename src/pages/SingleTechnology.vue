@@ -7,9 +7,9 @@
     </div>
     <div id="project_list" class="py-3">
         <div class="container">
-            <h2 class="text-center text-uppercase pt-2">Projects</h2>
+            <h2 class="text-center text-uppercase pt-2">{{ this.$route.params.slug }} Projects</h2>
             <div class="d-flex justify-content-center flex-wrap py-2">
-                <div class="badge rounded-pill text-bg-warning fs-6 m-1 d-flex flex-wrap" v-for="skill in this.skills">
+                <div class="badge rounded-pill text-bg-warning fs-6 m-1" v-for="skill in this.skills">
                     <router-link :to="{ name: 'single-technology', params: { slug: skill.slug } }" role="button"
                         class="nav-link">
                         {{ skill.name }}
@@ -38,30 +38,32 @@
 
 <script>
 import axios from 'axios';
-import AppCard from '../components/AppCard.vue';
-import AppCardPlaceholder from '../components/AppCardPlaceholder.vue';
-
+import AppCard from '../components/AppCard.vue'
+import AppCardPlaceholder from '../components/AppCardPlaceholder.vue'
 export default {
-    name: 'ProjectsPage',
+    name: 'SingleTechnology',
     data() {
         return {
             baseUrl: 'http://127.0.0.1:8000',
-            apiURI: '/api/projects',
+            apiURI: '/api/technologies/',
             skillsApiURI: '/api/technologies',
-            projects: [],
             skills: [],
             links: [],
-            currentPage: 1,
-            lastPage: null,
+            projects: [],
         }
+    },
+    components: {
+        AppCard,
+        AppCardPlaceholder
     },
     methods: {
         fetchData(url) {
             axios
                 .get(url)
                 .then(response => {
-                    this.projects = response.data.projects.data;
-                    this.links = response.data.projects.links;
+                    console.log(response.data.technologies);
+                    this.projects = response.data.technologies.data;
+                    this.links = response.data.technologies.links;
                 })
                 .catch(error => {
                     console.error(error)
@@ -80,12 +82,8 @@ export default {
         }
     },
     mounted() {
-        this.fetchData(this.baseUrl + this.apiURI)
+        this.fetchData(this.baseUrl + this.apiURI + this.$route.params.slug + '/projects')
         this.fetchSkills(this.baseUrl + this.skillsApiURI)
-    },
-    components: {
-        AppCard,
-        AppCardPlaceholder
     }
 }
 </script>

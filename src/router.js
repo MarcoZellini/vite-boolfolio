@@ -5,7 +5,8 @@ import AboutPage from './pages/AboutPage.vue';
 import ProjectsPage from './pages/ProjectsPage.vue';
 import ContactsPage from './pages/ContactsPage.vue';
 import SingleProject from './pages/SingleProject.vue';
-import NotFoundPage from './pages/NotFoundPage.vue'
+import NotFoundPage from './pages/NotFoundPage.vue';
+import SingleTechnology from './pages/SingleTechnology.vue';
 
 const routes = [
     {
@@ -14,7 +15,7 @@ const routes = [
         component: HomePage
     },
     {
-        path: '/projects',
+        path: '/projects/',
         name: 'projects',
         component: ProjectsPage
     },
@@ -22,6 +23,11 @@ const routes = [
         path: '/projects/:slug',
         name: 'single-project',
         component: SingleProject
+    },
+    {
+        path: '/technology/:slug',
+        name: 'single-technology',
+        component: SingleTechnology
     },
     {
         path: '/about',
