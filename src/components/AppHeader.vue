@@ -7,39 +7,40 @@ export default {
 <template>
     <header id="app_header">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="/">Boolfolio</a>
+            <div class="container d-flex align-items-center justify-content-between">
+                <a class="navbar-brand text-center" href="/">Boolfolio</a>
                 <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <div class="collapse navbar-collapse align-items-center justify-content-end" id="collapsibleNavId">
+                    <ul class="navbar-nav mt-2 mt-lg-0 text-center">
                         <li class="nav-item">
                             <!-- <a class="nav-link active" href="/" aria-current="page">Home</a> -->
-                            <router-link class="nav-link" active-class="active" :to="{ name: 'home' }">Home</router-link>
+                            <router-link class="nav-link" active-class="active" :to="{ name: 'home' }">
+                                Home
+                            </router-link>
                         </li>
                         <li class="nav-item">
                             <!-- <a class="nav-link active" href="/" aria-current="page">Home</a> -->
-                            <router-link class="nav-link" active-class="active"
-                                :to="{ name: 'projects' }">Projects</router-link>
+                            <router-link class="nav-link" active-class="active" :to="{ name: 'projects' }">
+                                Projects
+                            </router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" active-class="active" :to="{ name: 'about' }">About
+                            <router-link class="nav-link" active-class="active" :to="{ name: 'about' }">
+                                About
                                 me</router-link>
                             <!-- <a class="nav-link" href="#">About me</a> -->
                         </li>
                         <li class="nav-item">
                             <!-- <a class="nav-link" href="#">Contacts</a> -->
-                            <router-link class="nav-link" active-class="active"
-                                :to="{ name: 'contacts' }">Contacts</router-link>
+                            <router-link class="nav-link" active-class="active" :to="{ name: 'contacts' }">
+                                Contact
+                            </router-link>
                         </li>
                     </ul>
-                    <form class="d-flex my-2 my-lg-0">
-                        <input class="form-control me-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </nav>

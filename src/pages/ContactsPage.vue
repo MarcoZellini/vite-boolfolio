@@ -1,8 +1,8 @@
 <template>
     <div id="jumbotron" class="p-5 bg-secondary-subtle">
-        <div class="container py-5">
+        <div class="container py-5 text-center text-lg-start">
             <h1 class="display-5 fw-bold">Hi There!</h1>
-            <p class="col-md-8 fs-4">This is Marco and here you can see all my projects!</p>
+            <p class="fs-4 text-center">This is Marco and here you can see all my projects!</p>
         </div>
     </div>
 </template>

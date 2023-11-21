@@ -1,17 +1,18 @@
 <template>
     <div id="jumbotron" class="p-5 bg-secondary-subtle">
-        <div class="container py-5">
-            <h1 class="display-5 fw-bold">Hi There!</h1>
-            <p class="col-md-8 fs-4">This is Marco and here you can see all my projects!</p>
+        <div class="container py-5 text-center text-lg-start">
+            <h1 class="display-5 fw-bold text-center">Hi There!</h1>
+            <p class="fs-4 text-center">This is Marco and here you can see all my projects!</p>
         </div>
     </div>
-    <div id="project_list" class="py-3 bg-secondary-subtle">
+    <div id="project_list" class="py-3">
         <div class="container">
 
-            <div class="row g-3 justify-content-center">
-                <div class="col-4" v-for="project in  this.projects ">
+            <div class="row row-cols-1 row-cols-lg-3 g-3 justify-content-center">
+                <div v-if="this.projects.length > 0" class="col" v-for="project in  this.projects ">
                     <AppCard :project="project" />
                 </div>
+                <AppCardPlaceholder v-else />
             </div>
 
             <nav aria-label="Page navigation" class="d-flex justify-content-center my-3">
@@ -30,6 +31,7 @@
 <script>
 import axios from 'axios';
 import AppCard from '../components/AppCard.vue';
+import AppCardPlaceholder from '../components/AppCardPlaceholder.vue';
 
 export default {
     name: 'ProjectsPage',
@@ -61,7 +63,8 @@ export default {
         this.fetchData(this.baseUrl + this.apiURI)
     },
     components: {
-        AppCard
+        AppCard,
+        AppCardPlaceholder
     }
 }
 </script>

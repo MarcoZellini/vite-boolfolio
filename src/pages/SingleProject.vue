@@ -8,28 +8,46 @@
                 <div class="col">
                     <div class="container py-5">
                         <div class="my-1">
-                            <span class="badge rounded-pill text-bg-warning">
+                            <span class="badge rounded-pill text-bg-warning text-center w-100">
                                 {{ this.project.type.name }}
                             </span>
                         </div>
                         <h1 class="display-5 fw-bold">#{{ this.project.id }} - {{ this.project.title }}</h1>
-                        <div class="my-1">
-                            <span class="badge rounded-pill text-bg-primary mx-1"
+                        <div class="my-1 d-flex justify-content-center flex-wrap">
+                            <span class="badge rounded-pill text-bg-primary m-1"
                                 v-for="technology in this.project.technologies">
                                 {{ technology.name }}
                             </span>
                         </div>
-                        <p class="col-md-8 fs-4">{{ this.project.description }}</p>
+                        <p class="col-md-8 text-center w-100">{{ this.project.description }}</p>
+
+                        <div class="row">
+                            <div class="col">
+                                <a :href="this.project.website_link"
+                                    class="btn btn-lg btn-warning text-decoration-none text-dark fs-6 d-block">
+                                    Website Link
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a :href="this.project.github_link"
+                                    class="btn btn-lg btn-dark text-decoration-none text-white fs-6 d-block">
+                                    GitHub Link
+                                </a>
+                            </div>
+                        </div>
+
+
+
                         <ul class="d-flex p-0">
                             <li class="list-unstyled me-2">
-                                <a :href="this.project.website_link"
-                                    class="btn btn-lg btn-warning text-decoration-none text-dark fs-6">Website Link</a>
+
                             </li>
                             <li class="list-unstyled">
-                                <a :href="this.project.github_link"
-                                    class="btn btn-lg btn-dark text-decoration-none text-white fs-6">GitHub Link</a>
+
                             </li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -40,6 +58,7 @@
 
 <script>
 import axios from 'axios';
+import { router } from '../router.js'
 
 export default {
     name: 'SingleProject',
@@ -57,8 +76,12 @@ export default {
                 .get(url)
                 .then(response => {
                     console.log(response.data);
-                    this.querySuccessed = true
-                    this.project = response.data.project;
+                    if (response.data.success) {
+                        this.querySuccessed = true
+                        this.project = response.data.project;
+                    } else {
+                        router.push({ name: 'not-found' })
+                    }
                 })
                 .catch(error => {
                     console.error(error)
