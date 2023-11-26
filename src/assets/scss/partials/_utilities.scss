@@ -13,6 +13,10 @@
     background-color: $pf_primary;
 }
 
+.btn_primary.active {
+    background-color: $pf_primary !important
+}
+
 .btn_primary:hover {
     background-color: $pf_primary;
     box-shadow: inset 0 0 10px 0px #161616;
@@ -25,4 +29,8 @@
 
 .bg_warning {
     background-color: $pf_warning;
+}
+
+.text_warning {
+    color: $pf_warning;
 }

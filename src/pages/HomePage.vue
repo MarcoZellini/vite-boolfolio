@@ -1,12 +1,12 @@
 <template>
-    <AppHero />
+    <HomeHero />
 
     <!-- Latest Projects Section -->
     <div id="latest_projects" class="mt-2">
         <div class="container py-4">
             <h1 class="text-center pb-4 m-0">Projects</h1>
             <h5 class="fw-light text-center pb-4 m-0">Here you can check some of my <span
-                    class="d-inline-block mx-auto fw-bold text-warning bg_primary px-2 py-1 mb-1 rounded-1 text-capitalize ">recent
+                    class="d-inline-block mx-auto fw-bold text-warning bg_primary px-2 py-1 rounded-1 text-capitalize my-2">recent
                     works</span></h5>
             <!-- <h1 class="display-6 text-center mb-4">
                 Here you can check my last projects!
@@ -36,7 +36,7 @@
                     <div class="d-flex h-100 flex-column justify-content-center mx-5">
                         <p class="fs-2 text-center mb-5">
                             <span
-                                class="d-inline-block mx-auto fw-bold text-warning bg_primary px-2 py-1 mb-1 rounded-1 text-capitalize ">discover
+                                class="d-inline-block mx-auto fw-bold text-warning bg_primary px-2 py-1 rounded-1 text-capitalize my-2">discover
                                 more
                                 about
                                 me</span>
@@ -60,7 +60,7 @@
                     <div class="d-flex h-100 flex-column justify-content-center mx-5">
                         <p class="fs-2 text-center mb-5">
                             <span
-                                class="d-inline-block mx-auto fw-bold text-warning bg_primary px-2 py-1 mb-1 rounded-1 text-capitalize ">Send
+                                class="d-inline-block mx-auto fw-bold text-warning bg_primary px-2 py-1 rounded-1 text-capitalize my-2">Send
                                 me an Email</span>
                         <div class="fs-3">
                             using the contact format this link!
@@ -83,7 +83,7 @@
 
 <script>
 import AppCard from '../components/AppCard.vue';
-import AppHero from '../components/AppHero.vue';
+import HomeHero from '../components/HomeHero.vue';
 
 import AppCardPlaceholder from '../components/AppCardPlaceholder.vue';
 import axios from 'axios';
@@ -115,7 +115,6 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    //console.log(response);
                     this.skills = response.data.technologies;
                 })
                 .catch(error => {
@@ -126,7 +125,7 @@ export default {
     components: {
         AppCard,
         AppCardPlaceholder,
-        AppHero
+        HomeHero
     },
     mounted() {
         this.fetchProjects(this.baseUrl + this.latestProjectsApiURI)

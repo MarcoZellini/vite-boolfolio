@@ -16,6 +16,24 @@ h6 {
     font-weight: 600;
 }
 
+.pagination {
+
+
+    .page-item.active>.page-link {
+        background-color: $pf_primary;
+        border: 1px solid $pf_primary;
+        color: $pf_warning;
+    }
+
+    .page-link {
+        border-color: $pf_primary;
+        color: $pf_primary;
+    }
+}
+
+
+
+
 #app_footer {
 
     a {
