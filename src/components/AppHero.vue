@@ -1,15 +1,18 @@
 <template>
-    <div id="jumbotron" class="pt-5 bg-secondary-subtle">
+    <div id="jumbotron" class="bg_dark text-white py-5">
         <div class="container text-center text-lg-start">
 
             <div class="row">
-                <div class="col-8">
-                    <img class="img-fluid h-75" src="../assets/img/undraw_static_assets_rpm6.svg" alt="">
-                </div>
-                <div class="col-4 d-flex flex-column justify-content-center">
+                <div class="col-6 d-flex flex-column justify-content-center">
                     <h1 class="display-1 fw-bold text-center mb-5">Hello!</h1>
-                    <h1 class="fw-bold text-center">I'm Marco Zellini</h1>
-                    <p class="fs-4 text-center pt-3">Welcome to my portfolio</p>
+                    <h1 class="fw-bold text-center"><span class="fs-4">I'm</span> <span class="text-warning">Marco
+                            Zellini</span></h1>
+                    <p class="fs-4 text-center py-3">Welcome to my portfolio</p>
+                    <router-link class="btn btn_primary text-white mx-auto w-75" :to="{ name: 'projects' }">See all
+                        projects</router-link>
+                </div>
+                <div class="col-6">
+                    <img class="img-fluid" src="../assets/img/undraw_freelancer_re_irh4.svg" alt="">
                 </div>
             </div>
         </div>

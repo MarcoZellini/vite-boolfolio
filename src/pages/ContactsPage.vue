@@ -87,7 +87,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary mt-2" :disabled="this.loading">
+                            <button type="submit" class="btn btn_primary text-white mt-2" :disabled="this.loading">
                                 <span v-if="!this.loading">Get in Touch</span>
                                 <span v-else class="px-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

@@ -1,46 +1,84 @@
 <template>
     <AppHero />
 
-    <!-- Projects Section -->
-
-    <!-- <div id="project_list" class="py-3 bg-secondary-subtle">
-        <div class="container">
-            <h2 class="text-center text-uppercase py-2">Latest Projects</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-3 justify-content-center">
-                <div v-if="this.latestProjects.length > 0" class="col" v-for="project in this.latestProjects">
-                    <AppCard :project="project" />
-                </div>
-                <AppCardPlaceholder v-else />
-            </div>
-        </div>
-    </div> -->
-
-
+    <!-- Latest Projects Section -->
     <div id="latest_projects" class="mt-2">
-        <div class="container">
-            <h1 class="text-center my-4">Here you can check my last projects!</h1>
+        <div class="container py-4">
+            <h1 class="text-center pb-4 m-0">Projects</h1>
+            <h5 class="fw-light text-center pb-4 m-0">Here you can check some of my <span
+                    class="d-inline-block mx-auto fw-bold text-warning bg_primary px-2 py-1 mb-1 rounded-1 text-capitalize ">recent
+                    works</span></h5>
+            <!-- <h1 class="display-6 text-center mb-4">
+                Here you can check my last projects!
+            </h1> -->
             <div class="row" v-if="this.latestProjects.length > 0" v-for="project in this.latestProjects">
                 <AppCard :project="project" />
+            </div>
+            <div class="projects_link d-flex pt-3">
+                <router-link class="btn btn_primary text-white mx-auto w-25 text-capitalize" :to="{ name: 'projects' }">See
+                    all</router-link>
             </div>
         </div>
     </div>
 
-    <!-- About Section -->
+    <div class="spacer py-5"></div>
 
-    <!-- Contacts Section -->
-
-
-    <section id="skills" class="my-2">
+    <div id="about" class="bg_dark text-white py-5">
+        <h1 class="text-warning text-center text-capitalize">about</h1>
         <div class="container">
-            <h2 class="text-center text-uppercase pt-2">{{ this.$route.params.slug }} Technologies</h2>
-            <div class="d-flex justify-content-center flex-wrap py-2">
-                <div role="button" class="badge rounded-pil rounded-0 text-bg-warning fs-6 m-1" v-for="skill in this.skills"
-                    @click="this.fetchData(this.baseUrl + this.skillsApiURI + '/' + skill.slug + '/projects')">
-                    {{ skill.name }}
+            <div class="row">
+                <div class="col-6 h-auto">
+                    <div class="d-flex justify-content-center">
+                        <img class="img-fluid mb-5" src="../assets/img/undraw_programming_re_kg9v.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="d-flex h-100 flex-column justify-content-center mx-5">
+                        <p class="fs-2 text-center mb-5">
+                            <span
+                                class="d-inline-block mx-auto fw-bold text-warning bg_primary px-2 py-1 mb-1 rounded-1 text-capitalize ">discover
+                                more
+                                about
+                                me</span>
+                        <div class="fs-3">check out this link!</div>
+                        </p>
+                        <router-link class="btn btn_primary text-white py-2" :to="{ name: 'about' }">About
+                            me</router-link>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="spacer py-3"></div>
+
+    <!-- Contacts Section -->
+    <div id="contacts">
+        <h1 class="text-center text-capitalize mb-3">Contacts</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="d-flex h-100 flex-column justify-content-center mx-5">
+                        <p class="fs-2 text-center mb-5">
+                            <span
+                                class="d-inline-block mx-auto fw-bold text-warning bg_primary px-2 py-1 mb-1 rounded-1 text-capitalize ">Send
+                                me an Email</span>
+                        <div class="fs-3">
+                            using the contact format this link!
+                        </div>
+                        </p>
+                        <router-link class="btn btn_primary text-white py-2" :to="{ name: 'contacts' }">Contact
+                            me</router-link>
+                    </div>
+                </div>
+                <div class="col-6 h-auto">
+                    <div class="d-flex justify-content-center">
+                        <img class="img-fluid" src="../assets/img/undraw_letter_re_8m03.svg" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>

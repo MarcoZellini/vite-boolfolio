@@ -1,0 +1,28 @@
+@use './variables.scss' as *;
+
+.bg_primary {
+    background-color: $pf_primary;
+}
+
+.text_primary {
+    color: $pf_primary;
+}
+
+
+.btn_primary {
+    background-color: $pf_primary;
+}
+
+.btn_primary:hover {
+    background-color: $pf_primary;
+    box-shadow: inset 0 0 10px 0px #161616;
+    transition: all .5s ease;
+}
+
+.bg_dark {
+    background-color: $pf_dark;
+}
+
+.bg_warning {
+    background-color: $pf_warning;
+}

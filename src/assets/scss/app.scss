@@ -1,1 +1,46 @@
 @use "../node_modules/bootstrap/scss/bootstrap.scss";
+@use './partials/variables.scss' as *;
+@use './partials/utilities.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+#app_footer {
+
+    a {
+        padding: .5rem 1rem;
+        border: 1px solid $pf_primary;
+        color: $pf_white;
+
+        &:hover {
+            border-radius: 10px;
+            background-color: $pf_primary;
+            transition: all .5s ease;
+            color: $pf_warning;
+        }
+    }
+
+    .footer_contacts {
+        padding: .5rem 1rem;
+        border: 1px solid $pf_primary;
+        color: $pf_white;
+
+        &:hover {
+            border-radius: 10px;
+            background-color: $pf_primary;
+            transition: all .5s ease;
+            color: $pf_warning;
+        }
+    }
+}
