@@ -24,7 +24,7 @@
     </section>
     <div id="project_list" class="py-3">
         <div class="container">
-            <div class="row" v-if="this.projects.length > 0" v-for="   project    in    this.projects   ">
+            <div class="row" v-if="this.projects.length > 0" v-for="project in this.projects">
                 <AppCard :project="project" />
             </div>
 

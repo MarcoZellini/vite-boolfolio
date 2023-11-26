@@ -6,7 +6,7 @@ export default {
 
 <template>
     <header id="app_header">
-        <nav class="navbar navbar-expand-sm navbar-dark bg_primary py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg_primary py-3">
             <div class="container d-flex align-items-center justify-content-between">
                 <a class="navbar-brand text-center text-warning fw-bold" href="/">Zellini Marco</a>
                 <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
