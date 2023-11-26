@@ -13,8 +13,8 @@ export default {
 </script>
 
 <template>
-    <div class="card h-100" aria-hidden="true">
-        <img :src="this.baseUrl + '/storage/' + project.cover_image" class="card-img-top" alt="...">
+    <div class="card h-100 rounded-0 shadow" aria-hidden="true">
+        <img :src="this.baseUrl + '/storage/' + project.cover_image" class="card-img-to" alt="...">
         <div class="card-body d-flex flex-column justify-content-between">
             <h5 class="card-title placeholder-glow">
                 <span class="col-6">
@@ -34,12 +34,12 @@ export default {
                     </router-link>
                 </div>
                 <div class="col" aria-disabled="true">
-                    <a :href="project.website_link" class="my-1 btn btn-primary w-100">
+                    <a :href="project.website_link" class="my-1 btn btn-primary w-100" target="_blank">
                         Website link
                     </a>
                 </div>
                 <div class="col" aria-disabled="true">
-                    <a :href="project.github_link" class="my-1 btn btn-dark text-white w-100">
+                    <a :href="project.github_link" class="my-1 btn btn-dark text-white w-100" target="_blank">
                         GitHub Link
                     </a>
                 </div>

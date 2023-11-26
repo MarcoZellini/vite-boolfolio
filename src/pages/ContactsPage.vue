@@ -28,7 +28,6 @@
                                     <input type="text" class="form-control" name="name" id="name"
                                         aria-describedby="nameHelpId" v-model="name"
                                         :class="{ 'is-invalid': this.errors.name }" placeholder="e.g. Mario Rossi">
-                                    <small id="nameHelpId" class="form-text text-muted">Write your name</small>
                                 </div>
 
                                 <div class="alert alert-danger" role="alert" v-if="this.errors.name">
@@ -45,7 +44,6 @@
                                     <input type="email" class="form-control" name="email" id="email"
                                         aria-describedby="emailHelpId" placeholder="e.g. mail@example.it" v-model="email"
                                         :class="{ 'is-invalid': this.errors.email }">
-                                    <small id="emailHelpId" class="form-text text-muted">Write your email</small>
                                 </div>
 
                                 <div class="alert alert-danger" role="alert" v-if="this.errors.email">
@@ -62,7 +60,6 @@
                                     <input type="tel" class="form-control" name="phone" id="phone"
                                         placeholder="e.g. 1234567890" v-model="phone"
                                         :class="{ 'is-invalid': this.errors.phone }">
-                                    <small id="phoneHelpId" class="form-text text-muted">Write your phone</small>
                                 </div>
 
                                 <div class="alert alert-danger" role="alert" v-if="this.errors.phone">
@@ -80,7 +77,6 @@
                                         aria-describedby="messageHelpId" v-model="message"
                                         :class="{ 'is-invalid': this.errors.message }"
                                         placeholder="Write a message..."></textarea>
-                                    <small id="messageHelpId" class="form-text text-muted">Write your message</small>
                                 </div>
 
                                 <div class="alert alert-danger" role="alert" v-if="this.errors.message">
@@ -91,7 +87,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary" :disabled="this.loading">
+                            <button type="submit" class="btn btn-primary mt-2" :disabled="this.loading">
                                 <span v-if="!this.loading">Get in Touch</span>
                                 <span v-else class="px-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

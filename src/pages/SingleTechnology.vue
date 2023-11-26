@@ -7,17 +7,11 @@
     </div>
     <div id="project_list" class="py-3">
         <div class="container">
-            <h2 class="text-center text-uppercase pt-2">{{ this.$route.params.slug }} Projects</h2>
-            <div class="d-flex justify-content-center flex-wrap py-2">
-                <div class="badge rounded-pill text-bg-warning fs-6 m-1" v-for="skill in this.skills">
-                    <router-link :to="{ name: 'single-technology', params: { slug: skill.slug } }" role="button"
-                        class="nav-link">
-                        {{ skill.name }}
-                    </router-link>
-                </div>
-            </div>
+
+            <AppSkills :skills="this.skills" />
+
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 justify-content-center">
-                <div v-if="this.projects.length > 0" class="col" v-for="project in  this.projects ">
+                <div v-if="this.projects.length > 0" class="col" v-for="project in  this.projects">
                     <AppCard :project="project" />
                 </div>
                 <AppCardPlaceholder v-else />
@@ -31,7 +25,6 @@
                     </li>
                 </ul>
             </nav>
-
         </div>
     </div>
 </template>
@@ -39,6 +32,7 @@
 <script>
 import axios from 'axios';
 import AppCard from '../components/AppCard.vue'
+import AppSkills from '../components/AppSkills.vue'
 import AppCardPlaceholder from '../components/AppCardPlaceholder.vue'
 export default {
     name: 'SingleTechnology',
@@ -54,14 +48,15 @@ export default {
     },
     components: {
         AppCard,
-        AppCardPlaceholder
+        AppCardPlaceholder,
+        AppSkills
     },
     methods: {
         fetchData(url) {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response.data.technologies);
+                    console.log('PROJECTS', response);
                     this.projects = response.data.technologies.data;
                     this.links = response.data.technologies.links;
                 })
@@ -73,7 +68,7 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response);
+                    console.log('TECHS', response);
                     this.skills = response.data.technologies;
                 })
                 .catch(error => {

@@ -7,23 +7,20 @@
     </div>
     <section id="skills" class="my-2">
         <div class="container">
-            <h2 class="text-center text-uppercase py-2">These are my Skills</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-md justify-content-evenly g-4 w-50 mx-auto pt-4 pb-3">
-                <div class="col d-flex justify-content-center mt-0 my-1 mb-1" v-for="skill in this.skills">
-                    <div class="badge rounded-pill text-bg-warning fs-6 w-100 my-1">
-                        <router-link :to="{ name: 'single-technology', params: { slug: skill.slug } }" role="button"
-                            class="nav-link">
-                            {{ skill.name }}
-                        </router-link>
-                    </div>
+            <h2 class="text-center text-uppercase pt-2">{{ this.$route.params.slug }} Technologies</h2>
+            <div class="d-flex justify-content-center flex-wrap py-2">
+                <div role="button" class="badge rounded-pill text-bg-warning fs-6 m-1" v-for="skill in this.skills"
+                    @click="this.fetchData(this.baseUrl + this.skillsApiURI + '/' + skill.slug + '/projects')">
+                    {{ skill.name }}
                 </div>
             </div>
+
         </div>
     </section>
     <div id="project_list" class="py-3 bg-secondary-subtle">
         <div class="container">
             <h2 class="text-center text-uppercase py-2">Latest Projects</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3 justify-content-center">
+            <div class="row row-cols-1 row-cols-md-3 g-3 justify-content-center">
                 <div v-if="this.latestProjects.length > 0" class="col" v-for="project in this.latestProjects">
                     <AppCard :project="project" />
                 </div>
@@ -35,6 +32,7 @@
 
 <script>
 import AppCard from '../components/AppCard.vue';
+
 import AppCardPlaceholder from '../components/AppCardPlaceholder.vue';
 import axios from 'axios';
 
@@ -65,7 +63,7 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response);
+                    //console.log(response);
                     this.skills = response.data.technologies;
                 })
                 .catch(error => {
@@ -75,7 +73,7 @@ export default {
     },
     components: {
         AppCard,
-        AppCardPlaceholder
+        AppCardPlaceholder,
     },
     mounted() {
         this.fetchProjects(this.baseUrl + this.latestProjectsApiURI)

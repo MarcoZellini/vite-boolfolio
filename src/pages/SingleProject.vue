@@ -9,7 +9,7 @@
                     <div class="container py-5">
                         <div class="my-1">
                             <span class="badge rounded-pill text-bg-warning text-center w-100">
-                                {{ this.project.type.name }}
+                                {{ this.project.type_id != null ? this.project.type_id : 'untyped' }}
                             </span>
                         </div>
                         <h1 class="display-5 fw-bold">#{{ this.project.id }} - {{ this.project.title }}</h1>
