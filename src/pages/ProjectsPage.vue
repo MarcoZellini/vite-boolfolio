@@ -78,11 +78,11 @@ export default {
                     <!-- <div v-if="this.skills.length > 0">{{ this.baseUrl + this.skillsApiPath + '/' + this.skills[0].slug +
                         '/projects' }}</div> -->
                     <div class="d-flex justify-content-center flex-wrap py-2">
-                        <div role="button" class="badge rounded-pill text-bg-warning fs-6 m-1"
+                        <div role="button" class="badge rounded-0 text-bg-warning fs-6 m-1"
                             @click="this.fetchData(this.baseUrl + this.projectsApiPath)">
                             All
                         </div>
-                        <div role="button" class="badge rounded-pill text-bg-warning fs-6 m-1" v-for="skill in this.skills"
+                        <div role="button" class="badge rounded-0 text-bg-warning fs-6 m-1" v-for="skill in this.skills"
                             @click="this.fetchTechnology(this.baseUrl + this.skillsApiPath + '/' + skill.slug + '/projects')">
                             {{ skill.name }}
                         </div>
@@ -91,11 +91,9 @@ export default {
                 </div>
             </section>
             <h2 class="text-center text-uppercase pt-2">Project List</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 justify-content-center" v-if="this.projects">
-                <div v-if="this.projects.length > 0" class="col" v-for="project in  this.projects">
-                    <AppCard :project="project" />
-                </div>
-                <AppCardPlaceholder v-else />
+
+            <div class="row" v-if="this.projects.length > 0" v-for="project in this.projects">
+                <AppCard :project="project" />
             </div>
 
             <nav aria-label="Page navigation" class="d-flex justify-content-center my-3">

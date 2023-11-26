@@ -8,7 +8,7 @@ export default {
     <header id="app_header">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container d-flex align-items-center justify-content-between">
-                <a class="navbar-brand text-center" href="/">Boolfolio</a>
+                <a class="navbar-brand text-center" href="/">Zellini Marco</a>
                 <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                     aria-label="Toggle navigation">
