@@ -1,11 +1,11 @@
 <template>
-    <div id="jumbotron" class="p-5 bg-light">
+    <div id="jumbotron" class="p-lg-5 bg-light">
         <div class="container py-5 text-lg-start">
-            <div class="row row-cols-1 row-cols-md-2">
-                <div class="col py-4">
+            <div class="row">
+                <div class="d-none d-lg-block col-lg-5 pt-5">
                     <img class="img-fluid pt-5" src="../assets/img/undraw_mailbox_re_dvds.svg" alt="">
                 </div>
-                <div class="col d-flex flex-column justify-content-center align-items-center py-4">
+                <div class="col-12 col-lg-7 d-flex flex-column justify-content-center align-items-center py-4">
                     <h1 class="display-5 fw-bold">Hi There!</h1>
                     <p class="fs-4">Compile this form to get in touch!</p>
 
@@ -38,7 +38,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-12 col-xl-6">
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" class="form-control" name="email" id="email"
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-12 col-xl-6">
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Phone</label>
                                     <input type="tel" class="form-control" name="phone" id="phone"

@@ -92,7 +92,7 @@
     </div>
 
     <div id="free_time" class="bg_dark text-white py-5">
-        <div class="container">
+        <div class="container py-5">
             <div class="row">
                 <div class="col-12 col-lg-6 mb-5 mb-lg-0">
                     <div class="d-flex flex-column justify-content-around h-100">
@@ -142,7 +142,9 @@
                 nel mondo
                 dello sviluppo web.
             </div>
-            <img class="img-fluid py-3" src="../assets/img/undraw_developer_activity_re_39tg.svg" alt="">
+            <div class="w-50 mx-auto mt-4">
+                <img class="img-fluid py-3" src="../assets/img/undraw_developer_activity_re_39tg.svg" alt="">
+            </div>
         </div>
     </div>
 </template>

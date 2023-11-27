@@ -15,12 +15,12 @@ export default {
 <template>
     <div class="col-10 mx-auto my-2 shadow bg_primary text-white">
         <div class="row mx-1 my-3">
-            <div class="col-4 ps-0">
+            <div class="col-12 col-lg-4 p-0">
                 <div class="card-image">
                     <img :src="this.baseUrl + '/storage/' + project.cover_image" class="img-fluid h-75" alt="...">
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-12 col-lg-8">
                 <div class="row h-100">
                     <div class="col-6">
                         <div class="project-info">
