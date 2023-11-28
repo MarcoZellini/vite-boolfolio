@@ -15,9 +15,9 @@
                             </span>
                         </h1>
                         <div class="fs-3 fw-thin ">
-                            Anche se sono alle prime armi nel mondo dello sviluppo, ho una <span
+                            Anche se sono alle prime armi nel mondo dello sviluppo, ho una forte <span
                                 class="d-inline-block mx-auto fw-bold text-warning bg_primary px-2 py-1 rounded-1 text-capitalize my-md-2">passione
-                            </span> ardente per imparare e
+                            </span> per imparare e
                             creare cose incredibili attraverso il codice.
                         </div>
                     </div>
